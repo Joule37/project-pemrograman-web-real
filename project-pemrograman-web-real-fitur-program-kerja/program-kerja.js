@@ -10,7 +10,13 @@ const defaultPrograms = [
     { id: 6, title: "Prediksi LKTI", division: "Prediksi", date: "2026-11-05", status: "Coming Soon", location: "Universitas Muhammadiyah Malang", description: "Program kerja pengembangan dan pendampingan karya ilmiah." }
 ];
 
-let programs = JSON.parse(localStorage.getItem(STORAGE_KEY)) || defaultPrograms;
+let programs =
+    JSON.parse(localStorage.getItem(STORAGE_KEY));
+
+if (!programs) {
+    programs = defaultPrograms;
+    save();
+}
 let currentMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
 let editingId = null;
 
