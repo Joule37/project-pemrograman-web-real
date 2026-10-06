@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Kerja | UKM FDI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="dashboard">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">FDI</div>
+            <div class="organization-name"><h2>UKM FDI</h2><span>Forum Diskusi Ilmiah</span></div>
+        </div>
+        <nav class="sidebar-menu">
+            <p class="menu-title">MENU UTAMA</p>
+            <a href="index.html" class="menu-item"><span class="menu-icon">⌂</span><span>Dashboard</span></a>
+            <a href="anggota.html" class="menu-item"><span class="menu-icon">👥</span><span>Anggota</span></a>
+            <a href="program-kerja.html" class="menu-item active"><span class="menu-icon">▣</span><span>Program Kerja</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">◷</span><span>Agenda</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">▤</span><span>Pengumuman</span></a>
+            <p class="menu-title">ABOUT FDI</p>
+            <a href="#" class="menu-item"><span class="menu-icon">▧</span><span>Dokumentasi</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">★</span><span>Prestasi</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">♧</span><span>Open Recruitment</span></a>
+            <p class="menu-title">LAINNYA</p>
+            <a href="#" class="menu-item"><span class="menu-icon">◈</span><span>Laporan</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">⚙</span><span>Pengaturan</span></a>
+        </nav>
+        <div class="sidebar-user">
+            <div class="user-avatar">JA</div>
+            <div class="user-info"><strong>Julian Abi</strong><span>Ketua Umum</span></div>
+            <button class="logout-button">↪</button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="page-title">
+                <h1>Program Kerja</h1>
+                <p>Kelola program kerja dan agenda setiap divisi FDI.</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="notification-button">🔔<span class="notification-dot"></span></button>
+                <div class="profile"><div class="profile-avatar">JA</div><div><strong>Julian Abi</strong><span>Ketua Umum</span></div></div>
+            </div>
+        </header>
+
+        <section class="content proker-page">
+            <div class="proker-summary">
+                <div class="proker-stat"><span>Total Proker</span><strong id="totalProker">0</strong></div>
+                <div class="proker-stat"><span>Coming Soon</span><strong id="comingProker">0</strong></div>
+                <div class="proker-stat"><span>Sedang Berjalan</span><strong id="runningProker">0</strong></div>
+                <div class="proker-stat"><span>Selesai</span><strong id="doneProker">0</strong></div>
+            </div>
+
+            <div class="proker-toolbar">
+                <div class="toolbar-left">
+                    <select id="divisionFilter" class="proker-select">
+                        <option value="Semua Divisi">Semua Divisi</option>
+                        <option value="Pengurus Inti">Pengurus Inti</option>
+                        <option value="PSDM">PSDM</option>
+                        <option value="MENHAS">MENHAS</option>
+                        <option value="Organisasi">Organisasi</option>
+                        <option value="PKM">PKM</option>
+                        <option value="Prediksi">Prediksi</option>
+                    </select>
+                    <select id="statusFilter" class="proker-select">
+                        <option value="Semua Status">Semua Status</option>
+                        <option value="Coming Soon">Coming Soon</option>
+                        <option value="Berjalan">Berjalan</option>
+                        <option value="Selesai">Selesai</option>
+                    </select>
+                </div>
+                <button class="primary-button" id="addProkerBtn">＋ Tambah Program Kerja</button>
+            </div>
+
+            <div class="proker-layout">
+                <div class="proker-main-column">
+                    <div class="section-heading"><div><h2>Program Kerja per Divisi</h2><p>Pilih divisi untuk melihat agenda dan program kerjanya.</p></div></div>
+                    <div id="divisionSections"></div>
+                </div>
+
+                <aside class="calendar-card">
+                    <div class="calendar-header">
+                        <div><h2>Kalender Agenda</h2><p id="calendarSubtitle">Agenda bulan ini</p></div>
+                        <div class="calendar-nav"><button id="prevMonth">‹</button><button id="nextMonth">›</button></div>
+                    </div>
+                    <div class="calendar-month"><strong id="calendarMonth">-</strong></div>
+                    <div class="calendar-weekdays"><span>Min</span><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span></div>
+                    <div class="calendar-grid" id="calendarGrid"></div>
+                    <div class="calendar-legend">
+                        <span><i class="dot coming"></i> Coming Soon</span>
+                        <span><i class="dot running"></i> Berjalan</span>
+                        <span><i class="dot done"></i> Selesai</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div class="modal-overlay" id="prokerModal">
+    <div class="proker-modal">
+        <div class="modal-header">
+            <div><h2 id="prokerModalTitle">Tambah Program Kerja</h2><p>Isi informasi program kerja atau agenda FDI.</p></div>
+            <button class="modal-close" id="closeProkerModal">×</button>
+        </div>
+        <form id="prokerForm">
+            <input type="hidden" id="prokerId">
+            <div class="form-grid">
+                <div class="form-group full"><label for="prokerName">Nama Program Kerja</label><input id="prokerName" required placeholder="Contoh: Diskusi Ilmiah Bulanan"></div>
+                <div class="form-group"><label for="prokerDivision">Divisi</label><select id="prokerDivision" required><option value="Pengurus Inti">Pengurus Inti</option><option value="PSDM">PSDM</option><option value="MENHAS">MENHAS</option><option value="Organisasi">Organisasi</option><option value="PKM">PKM</option><option value="Prediksi">Prediksi</option></select></div>
+                <div class="form-group"><label for="prokerStatus">Status</label><select id="prokerStatus" required><option value="Coming Soon">Coming Soon</option><option value="Berjalan">Berjalan</option><option value="Selesai">Selesai</option></select></div>
+                <div class="form-group"><label for="prokerDate">Tanggal</label><input type="date" id="prokerDate" required></div>
+                <div class="form-group"><label for="prokerLocation">Lokasi</label><input id="prokerLocation" placeholder="Sekretariat / Online / Aula"></div>
+                <div class="form-group full"><label for="prokerDescription">Deskripsi</label><textarea id="prokerDescription" rows="4" placeholder="Jelaskan tujuan atau detail kegiatan..."></textarea></div>
+            </div>
+            <div class="modal-footer"><button type="button" class="secondary-button" id="cancelProker">Batal</button><button type="submit" class="primary-button">Simpan Program Kerja</button></div>
+        </form>
+    </div>
+</div>
+
+<div class="detail-overlay" id="detailModal">
+    <div class="proker-modal detail-modal">
+        <button class="modal-close detail-close" id="closeDetailModal">×</button>
+        <div id="detailContent"></div>
+    </div>
+</div>
+<script src="program-kerja.js"></script>
+</body>
+</html>
