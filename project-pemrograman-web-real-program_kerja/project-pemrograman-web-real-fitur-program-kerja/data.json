@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "nama_kegiatan": "Helden 72 Hackathon",
+        "lokasi": "Laboratorium Informatika UMM",
+        "tanggal": "31 Juli - 2 Agustus 2026",
+        "kategori": "Kompetisi",
+        "status": "Selesai"
+    },
+    {
+        "id": 2,
+        "nama_kegiatan": "Magang Profesional PPPPTK BOE/VEDC",
+        "lokasi": "Malang",
+        "tanggal": "Juli 2026 - Selesai",
+        "kategori": "Magang",
+        "status": "Berjalan"
+    },
+    {
+        "id": 3,
+        "nama_kegiatan": "Design Thinking Workshop",
+        "lokasi": "Online / Workshop",
+        "tanggal": "2 Juli 2026",
+        "kategori": "Pelatihan",
+        "status": "Selesai"
+    },
+    {
+        "id": 4,
+        "nama_kegiatan": "Magang Industri Tiga Serangkai",
+        "lokasi": "Surakarta",
+        "tanggal": "Juni 2026",
+        "kategori": "Magang",
+        "status": "Selesai"
+    },
+    {
+        "id": 5,
+        "nama_kegiatan": "Roadshow & Milad Media Official PWM Jatim",
+        "lokasi": "Aula BAU UMM",
+        "tanggal": "17 Mei 2025",
+        "kategori": "Kepanitiaan/Event",
+        "status": "Selesai"
+    }
+]

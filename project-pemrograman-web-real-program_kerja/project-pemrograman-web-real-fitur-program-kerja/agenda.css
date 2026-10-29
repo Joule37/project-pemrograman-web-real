@@ -1,0 +1,932 @@
+/* =========================================================
+   AGENDA PAGE — agenda.css
+   UKM FDI | Forum Diskusi Ilmiah
+   ========================================================= */
+
+/* ─── Base Page ─────────────────────────────────────────── */
+.agenda-page {
+    padding: 28px 32px;
+}
+
+/* ─── Summary Stats ─────────────────────────────────────── */
+.ag-summary-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+}
+        
+.ag-stat-card {
+    background: #fff;
+    border: 1px solid #e7eaf0;
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.ag-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(22, 45, 90, 0.08);
+}
+
+.ag-stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.ag-stat-blue .ag-stat-icon  { background: #edf4ff; color: #155eef; }
+.ag-stat-orange .ag-stat-icon { background: #fff7ed; color: #ea580c; }
+.ag-stat-green .ag-stat-icon  { background: #ecfdf3; color: #079455; }
+.ag-stat-purple .ag-stat-icon { background: #f5f3ff; color: #7c3aed; }
+
+.ag-stat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ag-stat-body span {
+    font-size: 10px;
+    color: #8a94a6;
+    font-weight: 500;
+}
+
+.ag-stat-body strong {
+    font-size: 26px;
+    color: #172033;
+    line-height: 1;
+}
+
+/* ─── Toolbar ────────────────────────────────────────────── */
+.ag-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+
+.ag-toolbar-left {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.ag-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.ag-search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #e1e5ec;
+    border-radius: 8px;
+    padding: 0 12px;
+    min-width: 200px;
+    height: 40px;
+    color: #8a94a6;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.ag-search-box:focus-within {
+    border-color: #155eef;
+    box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.07);
+}
+
+.ag-search-box input {
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 11px;
+    color: #172033;
+    width: 100%;
+    background: transparent;
+}
+
+.ag-search-box input::placeholder {
+    color: #a0a8b5;
+}
+
+.ag-select {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #e1e5ec;
+    border-radius: 8px;
+    background: #fff;
+    color: #394150;
+    font-family: inherit;
+    font-size: 11px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    min-width: 140px;
+}
+
+.ag-select:focus {
+    border-color: #155eef;
+    box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.07);
+}
+
+/* View Toggle */
+.ag-view-toggle {
+    display: flex;
+    border: 1px solid #e1e5ec;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ag-view-btn {
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border: none;
+    color: #8a94a6;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+}
+
+.ag-view-btn.active {
+    background: #155eef;
+    color: #fff;
+}
+
+.ag-view-btn:not(.active):hover {
+    background: #f2f5fa;
+    color: #155eef;
+}
+
+/* ─── List View ─────────────────────────────────────────── */
+.ag-list-view {
+    min-height: 200px;
+}
+
+.ag-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Timeline Group (by month) */
+.ag-month-group {
+    margin-bottom: 28px;
+}
+
+.ag-month-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.ag-month-label h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #172033;
+    white-space: nowrap;
+}
+
+.ag-month-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e7eaf0;
+}
+
+.ag-month-count {
+    font-size: 10px;
+    color: #8a94a6;
+    background: #f2f4f7;
+    border-radius: 20px;
+    padding: 3px 9px;
+    white-space: nowrap;
+}
+
+/* Agenda Cards Grid */
+.ag-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+}
+
+/* Agenda Card */
+.ag-card {
+    background: #fff;
+    border: 1px solid #e7eaf0;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.ag-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: 4px 0 0 4px;
+}
+
+.ag-card.tipe-rapat::before      { background: #155eef; }
+.ag-card.tipe-kegiatan::before   { background: #22a55a; }
+.ag-card.tipe-pelatihan::before  { background: #7c3aed; }
+.ag-card.tipe-evaluasi::before   { background: #ea580c; }
+.ag-card.tipe-lainnya::before    { background: #8a94a6; }
+
+.ag-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(22, 45, 90, 0.09);
+    border-color: #c8d5f0;
+}
+
+.ag-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.ag-card-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.ag-badge {
+    font-size: 8px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+}
+
+/* Type badges */
+.ag-badge-rapat      { background: #edf4ff; color: #155eef; }
+.ag-badge-kegiatan   { background: #ecfdf3; color: #079455; }
+.ag-badge-pelatihan  { background: #f5f3ff; color: #7c3aed; }
+.ag-badge-evaluasi   { background: #fff7ed; color: #ea580c; }
+.ag-badge-lainnya    { background: #f2f4f7; color: #596579; }
+
+/* Status badges */
+.ag-status {
+    font-size: 8px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+.ag-status i {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.ag-status.akan-datang { background: #fff8e1; color: #b76b00; }
+.ag-status.akan-datang i { background: #f0a51a; }
+.ag-status.berlangsung { background: #e3f6eb; color: #168044; }
+.ag-status.berlangsung i { background: #22a55a; }
+.ag-status.selesai { background: #eef2f7; color: #657084; }
+.ag-status.selesai i { background: #8993a5; }
+.ag-status.dibatalkan { background: #fef2f2; color: #dc2626; }
+.ag-status.dibatalkan i { background: #ef4444; }
+
+.ag-card-actions {
+    display: flex;
+    gap: 2px;
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
+.ag-card:hover .ag-card-actions {
+    opacity: 1;
+}
+
+.ag-card-actions button {
+    width: 26px;
+    height: 26px;
+    border: none;
+    background: transparent;
+    color: #8a94a6;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+}
+
+.ag-card-actions button:hover {
+    background: #f2f4f7;
+    color: #155eef;
+}
+
+.ag-card-actions button.delete-btn:hover {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.ag-card h4 {
+    font-size: 13px;
+    color: #202939;
+    margin: 0 0 6px;
+    line-height: 1.4;
+}
+
+.ag-card-desc {
+    font-size: 10px;
+    color: #7a8495;
+    line-height: 1.6;
+    margin: 0 0 12px;
+    min-height: 28px;
+}
+
+.ag-card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 10px;
+    border-top: 1px solid #f0f2f5;
+    margin-top: auto;
+}
+
+.ag-card-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    color: #7a8495;
+}
+
+.ag-card-meta-item span:first-child {
+    font-size: 10px;
+}
+
+.ag-card-divisi {
+    font-size: 9px;
+    font-weight: 600;
+    color: #155eef;
+    margin-bottom: 4px;
+}
+
+/* ─── Empty State ────────────────────────────────────────── */
+.ag-empty {
+    background: #fff;
+    border: 1px dashed #d5dbe6;
+    border-radius: 14px;
+    padding: 60px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.ag-empty-icon {
+    font-size: 42px;
+    opacity: 0.45;
+    margin-bottom: 6px;
+}
+
+.ag-empty strong {
+    font-size: 14px;
+    color: #3c4657;
+}
+
+.ag-empty p {
+    font-size: 11px;
+    color: #8a94a6;
+    margin: 0;
+}
+
+/* ─── Calendar View ─────────────────────────────────────── */
+.ag-cal-view {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    align-items: start;
+}
+
+.ag-cal-container {
+    background: #fff;
+    border: 1px solid #e7eaf0;
+    border-radius: 14px;
+    padding: 22px;
+}
+
+.ag-cal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ag-cal-header h2 {
+    font-size: 17px;
+    color: #172033;
+    margin: 0 0 4px;
+    text-align: center;
+}
+
+.ag-cal-header p {
+    font-size: 10px;
+    color: #8a94a6;
+    margin: 0;
+    text-align: center;
+}
+
+.ag-cal-nav {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #e3e7ed;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 22px;
+    color: #596579;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+}
+
+.ag-cal-nav:hover {
+    background: #edf4ff;
+    color: #155eef;
+    border-color: #c0d2f5;
+}
+
+.ag-cal-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 8px;
+}
+
+.ag-cal-weekdays span {
+    text-align: center;
+    font-size: 9px;
+    font-weight: 700;
+    color: #9aa3b2;
+    padding-bottom: 6px;
+}
+
+.ag-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.ag-cal-day {
+    min-height: 80px;
+    background: #fff;
+    border: 1px solid #f0f2f5;
+    border-radius: 6px;
+    padding: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.15s;
+}
+
+.ag-cal-day:hover {
+    background: #f8faff;
+}
+
+.ag-cal-day.ag-outside {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.ag-cal-day.ag-today {
+    background: #f0f6ff;
+    border-color: #aac6f8;
+}
+
+.ag-cal-day.ag-today > strong {
+    color: #155eef;
+    font-weight: 700;
+}
+
+.ag-cal-day > strong {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 4px;
+    color: #404a5b;
+}
+
+.ag-cal-event {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 3px;
+    padding: 2px 4px;
+    margin-top: 2px;
+    font-size: 7px;
+    line-height: 1.3;
+}
+
+.ag-cal-event.tipe-rapat      { background: #e8f0ff; color: #155eef; }
+.ag-cal-event.tipe-kegiatan   { background: #e3f6eb; color: #167641; }
+.ag-cal-event.tipe-pelatihan  { background: #f2eeff; color: #6d28d9; }
+.ag-cal-event.tipe-evaluasi   { background: #fff1e7; color: #c05d18; }
+.ag-cal-event.tipe-lainnya    { background: #f2f4f7; color: #596579; }
+
+.ag-cal-day small {
+    font-size: 7px;
+    color: #8a94a6;
+}
+
+/* Calendar Legend */
+.ag-cal-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #eef0f4;
+    color: #7d8797;
+    font-size: 9px;
+}
+
+.ag-cal-legend span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ag-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.ag-dot-rapat     { background: #155eef; }
+.ag-dot-kegiatan  { background: #22a55a; }
+.ag-dot-pelatihan { background: #7c3aed; }
+.ag-dot-evaluasi  { background: #ea580c; }
+.ag-dot-lainnya   { background: #8a94a6; }
+
+/* Calendar Sidebar */
+.ag-cal-sidebar {
+    background: #fff;
+    border: 1px solid #e7eaf0;
+    border-radius: 14px;
+    padding: 18px;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
+}
+
+.ag-cal-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.ag-cal-sidebar-header h3 {
+    font-size: 14px;
+    color: #172033;
+    margin: 0;
+}
+
+.ag-chip {
+    font-size: 9px;
+    font-weight: 600;
+    background: #edf4ff;
+    color: #155eef;
+    border-radius: 20px;
+    padding: 4px 9px;
+}
+
+/* Sidebar Agenda List Item */
+.ag-sidebar-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f2f5;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-radius: 8px;
+    padding: 10px 8px;
+    margin-bottom: 2px;
+}
+
+.ag-sidebar-item:hover {
+    background: #f8faff;
+}
+
+.ag-sidebar-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.ag-sidebar-date {
+    width: 40px;
+    height: 44px;
+    background: #f5f7fb;
+    border: 1px solid #e7eaf0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ag-sidebar-date strong {
+    font-size: 16px;
+    line-height: 1;
+    color: #172033;
+}
+
+.ag-sidebar-date span {
+    font-size: 7px;
+    font-weight: 700;
+    color: #155eef;
+    letter-spacing: 0.05em;
+}
+
+.ag-sidebar-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.ag-sidebar-info strong {
+    display: block;
+    font-size: 11px;
+    color: #202939;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ag-sidebar-info span {
+    display: block;
+    font-size: 9px;
+    color: #8a94a6;
+}
+
+/* ─── Modal Agenda ───────────────────────────────────────── */
+.ag-modal {
+    width: min(640px, 100%);
+    max-height: 92vh;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+    padding: 24px;
+    animation: agModalIn 0.22s ease;
+}
+
+@keyframes agModalIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─── Detail Modal ───────────────────────────────────────── */
+.ag-detail-modal {
+    width: min(520px, 100%);
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+    padding: 28px;
+    position: relative;
+    animation: agModalIn 0.22s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.ag-detail-header {
+    margin-bottom: 20px;
+}
+
+.ag-detail-title {
+    font-size: 21px;
+    font-weight: 700;
+    color: #172033;
+    margin: 14px 0 5px;
+    padding-right: 36px;
+}
+
+.ag-detail-divisi {
+    font-size: 11px;
+    font-weight: 600;
+    color: #155eef;
+    margin: 0 0 20px;
+}
+
+.ag-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.ag-detail-field {
+    background: #f7f8fa;
+    border-radius: 10px;
+    padding: 12px 14px;
+}
+
+.ag-detail-field label {
+    display: block;
+    font-size: 9px;
+    font-weight: 600;
+    color: #8a94a6;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 5px;
+}
+
+.ag-detail-field strong {
+    font-size: 12px;
+    color: #202939;
+}
+
+.ag-detail-desc-box {
+    background: #f7f8fa;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 20px;
+}
+
+.ag-detail-desc-box label {
+    display: block;
+    font-size: 9px;
+    font-weight: 600;
+    color: #8a94a6;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 7px;
+}
+
+.ag-detail-desc-box p {
+    font-size: 11px;
+    color: #596579;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.ag-detail-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* ─── Confirm Modal ──────────────────────────────────────── */
+.ag-confirm-modal {
+    width: min(400px, 100%);
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+    padding: 28px 24px;
+    text-align: center;
+    animation: agModalIn 0.22s ease;
+}
+
+.ag-confirm-icon {
+    font-size: 40px;
+    margin-bottom: 14px;
+}
+
+.ag-confirm-modal h3 {
+    font-size: 17px;
+    color: #172033;
+    margin: 0 0 8px;
+}
+
+.ag-confirm-modal p {
+    font-size: 11px;
+    color: #8a94a6;
+    line-height: 1.6;
+    margin: 0 0 22px;
+}
+
+.ag-confirm-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.ag-danger-btn {
+    height: 38px;
+    padding: 0 18px;
+    background: #dc2626;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.ag-danger-btn:hover {
+    background: #b91c1c;
+}
+
+/* ─── Hidden utility ─────────────────────────────────────── */
+.hidden {
+    display: none !important;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1100px) {
+    .ag-summary-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ag-cal-view {
+        grid-template-columns: 1fr;
+    }
+
+    .ag-cal-sidebar {
+        position: static;
+        max-height: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .agenda-page {
+        padding: 20px;
+    }
+
+    .ag-summary-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ag-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ag-toolbar-left {
+        flex-direction: column;
+    }
+
+    .ag-toolbar-right {
+        justify-content: flex-end;
+    }
+
+    .ag-search-box {
+        min-width: unset;
+    }
+
+    .ag-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ag-cal-day {
+        min-height: 60px;
+    }
+
+    .ag-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .ag-summary-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ag-confirm-actions {
+        flex-direction: column;
+    }
+}

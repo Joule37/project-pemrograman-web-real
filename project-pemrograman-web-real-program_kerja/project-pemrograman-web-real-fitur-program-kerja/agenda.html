@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda | UKM FDI</title>
+    <meta name="description" content="Kelola dan pantau agenda kegiatan UKM FDI Forum Diskusi Ilmiah.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="agenda.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <!-- ====== SIDEBAR ====== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">FDI</div>
+                <div class="organization-name">
+                    <h2>UKM FDI</h2><span>Forum Diskusi Ilmiah</span>
+                </div>
+            </div>
+            <nav class="sidebar-menu">
+                <p class="menu-title">MENU UTAMA</p>
+                <a href="index.html" class="menu-item"><span class="menu-icon">⌂</span><span>Dashboard</span></a>
+                <a href="anggota.html" class="menu-item"><span class="menu-icon">👥</span><span>Anggota</span></a>
+                <a href="program-kerja.html" class="menu-item"><span class="menu-icon">▣</span><span>Program
+                        Kerja</span></a>
+                <a href="agenda.html" class="menu-item active"><span class="menu-icon">◷</span><span>Agenda</span></a>
+                <p class="menu-title">ABOUT FDI</p>
+                <a href="dokumentasi.html" class="menu-item"><span class="menu-icon">▧</span><span>Dokumentasi</span></a>
+                <a href="#" class="menu-item"><span class="menu-icon">★</span><span>Prestasi</span></a>
+                <a href="#" class="menu-item"><span class="menu-icon">♧</span><span>Open Recruitment</span></a>
+                <p class="menu-title">LAINNYA</p>
+                <a href="#" class="menu-item"><span class="menu-icon">◈</span><span>Laporan</span></a>
+                <a href="#" class="menu-item"><span class="menu-icon">⚙</span><span>Pengaturan</span></a>
+            </nav>
+            <div class="sidebar-user">
+                <div class="user-avatar">JA</div>
+                <div class="user-info"><strong>Julian Abi</strong><span>Ketua Umum</span></div>
+                <button class="logout-button">↪</button>
+            </div>
+        </aside>
+
+        <!-- ====== MAIN CONTENT ====== -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="page-title">
+                    <h1>Agenda</h1>
+                    <p>Kelola dan pantau seluruh agenda kegiatan UKM FDI.</p>
+                </div>
+                <div class="topbar-actions">
+                    <button class="notification-button" id="notifBtn" aria-label="Notifikasi">🔔<span
+                            class="notification-dot"></span></button>
+                    <div class="profile">
+                        <div class="profile-avatar">JA</div>
+                        <div><strong>Julian Abi</strong><span>Ketua Umum</span></div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="content agenda-page">
+
+                <!-- ====== SUMMARY STATS ====== -->
+                <div class="ag-summary-row">
+                    <div class="ag-stat-card ag-stat-blue">
+                        <div class="ag-stat-icon">◷</div>
+                        <div class="ag-stat-body">
+                            <span>Total Agenda</span>
+                            <strong id="statTotal">0</strong>
+                        </div>
+                    </div>
+                    <div class="ag-stat-card ag-stat-orange">
+                        <div class="ag-stat-icon">⏳</div>
+                        <div class="ag-stat-body">
+                            <span>Akan Datang</span>
+                            <strong id="statUpcoming">0</strong>
+                        </div>
+                    </div>
+                    <div class="ag-stat-card ag-stat-green">
+                        <div class="ag-stat-icon">✓</div>
+                        <div class="ag-stat-body">
+                            <span>Selesai</span>
+                            <strong id="statDone">0</strong>
+                        </div>
+                    </div>
+                    <div class="ag-stat-card ag-stat-purple">
+                        <div class="ag-stat-icon">📅</div>
+                        <div class="ag-stat-body">
+                            <span>Bulan Ini</span>
+                            <strong id="statThisMonth">0</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ====== TOOLBAR ====== -->
+                <div class="ag-toolbar">
+                    <div class="ag-toolbar-left">
+                        <div class="ag-search-box">
+                            <span>🔍</span>
+                            <input type="text" id="agSearch" placeholder="Cari agenda...">
+                        </div>
+                        <select id="agFilterDivisi" class="ag-select">
+                            <option value="">Semua Divisi</option>
+                            <option value="Pengurus Inti">Pengurus Inti</option>
+                            <option value="PSDM">PSDM</option>
+                            <option value="MENHAS">MENHAS</option>
+                            <option value="Organisasi">Organisasi</option>
+                            <option value="PKM">PKM</option>
+                            <option value="Prediksi">Prediksi</option>
+                        </select>
+                        <select id="agFilterTipe" class="ag-select">
+                            <option value="">Semua Tipe</option>
+                            <option value="Rapat">Rapat</option>
+                            <option value="Kegiatan">Kegiatan</option>
+                            <option value="Pelatihan">Pelatihan</option>
+                            <option value="Evaluasi">Evaluasi</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                        <select id="agFilterStatus" class="ag-select">
+                            <option value="">Semua Status</option>
+                            <option value="Akan Datang">Akan Datang</option>
+                            <option value="Berlangsung">Berlangsung</option>
+                            <option value="Selesai">Selesai</option>
+                            <option value="Dibatalkan">Dibatalkan</option>
+                        </select>
+                    </div>
+                    <div class="ag-toolbar-right">
+                        <div class="ag-view-toggle">
+                            <button id="btnViewList" class="ag-view-btn active" title="Tampilan List"
+                                aria-label="List view">☰</button>
+                            <button id="btnViewCalendar" class="ag-view-btn" title="Tampilan Kalender"
+                                aria-label="Calendar view">◫</button>
+                        </div>
+                        <button class="primary-button" id="addAgendaBtn">＋ Tambah Agenda</button>
+                    </div>
+                </div>
+
+                <!-- ====== MAIN LAYOUT ====== -->
+                <div class="ag-main-layout" id="agMainLayout">
+
+                    <!-- LIST VIEW -->
+                    <div id="agListView" class="ag-list-view">
+                        <div class="ag-timeline" id="agTimeline"></div>
+                    </div>
+
+                    <!-- CALENDAR VIEW -->
+                    <div id="agCalView" class="ag-cal-view hidden">
+                        <div class="ag-cal-container">
+                            <div class="ag-cal-header">
+                                <button id="agCalPrev" class="ag-cal-nav">‹</button>
+                                <div>
+                                    <h2 id="agCalMonthLabel">-</h2>
+                                    <p id="agCalSubtitle">Agenda bulan ini</p>
+                                </div>
+                                <button id="agCalNext" class="ag-cal-nav">›</button>
+                            </div>
+                            <div class="ag-cal-weekdays">
+                                <span>Min</span><span>Sen</span><span>Sel</span>
+                                <span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span>
+                            </div>
+                            <div class="ag-cal-grid" id="agCalGrid"></div>
+                            <div class="ag-cal-legend">
+                                <span><i class="ag-dot ag-dot-rapat"></i>Rapat</span>
+                                <span><i class="ag-dot ag-dot-kegiatan"></i>Kegiatan</span>
+                                <span><i class="ag-dot ag-dot-pelatihan"></i>Pelatihan</span>
+                                <span><i class="ag-dot ag-dot-evaluasi"></i>Evaluasi</span>
+                                <span><i class="ag-dot ag-dot-lainnya"></i>Lainnya</span>
+                            </div>
+                        </div>
+                        <div class="ag-cal-sidebar" id="agCalSidebar">
+                            <div class="ag-cal-sidebar-header">
+                                <h3 id="agCalSidebarTitle">Agenda Bulan Ini</h3>
+                                <span id="agCalSidebarCount" class="ag-chip">0 agenda</span>
+                            </div>
+                            <div id="agCalSidebarList"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ====== MODAL TAMBAH/EDIT AGENDA ====== -->
+    <div class="modal-overlay" id="agModal" role="dialog" aria-modal="true" aria-labelledby="agModalTitle">
+        <div class="ag-modal">
+            <div class="modal-header">
+                <div>
+                    <h2 id="agModalTitle">Tambah Agenda</h2>
+                    <p>Isi informasi agenda kegiatan FDI.</p>
+                </div>
+                <button class="modal-close" id="closeAgModal" aria-label="Tutup">×</button>
+            </div>
+            <form id="agForm">
+                <input type="hidden" id="agId">
+                <div class="form-grid">
+                    <div class="form-group full">
+                        <label for="agName">Nama Agenda</label>
+                        <input id="agName" required placeholder="Contoh: Rapat Koordinasi Pengurus">
+                    </div>
+                    <div class="form-group">
+                        <label for="agDivisi">Divisi</label>
+                        <select id="agDivisi" required>
+                            <option value="Pengurus Inti">Pengurus Inti</option>
+                            <option value="PSDM">PSDM</option>
+                            <option value="MENHAS">MENHAS</option>
+                            <option value="Organisasi">Organisasi</option>
+                            <option value="PKM">PKM</option>
+                            <option value="Prediksi">Prediksi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="agTipe">Tipe Kegiatan</label>
+                        <select id="agTipe" required>
+                            <option value="Rapat">Rapat</option>
+                            <option value="Kegiatan">Kegiatan</option>
+                            <option value="Pelatihan">Pelatihan</option>
+                            <option value="Evaluasi">Evaluasi</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="agDate">Tanggal</label>
+                        <input type="date" id="agDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="agTime">Waktu</label>
+                        <input type="time" id="agTime" placeholder="HH:MM">
+                    </div>
+                    <div class="form-group">
+                        <label for="agStatus">Status</label>
+                        <select id="agStatus" required>
+                            <option value="Akan Datang">Akan Datang</option>
+                            <option value="Berlangsung">Berlangsung</option>
+                            <option value="Selesai">Selesai</option>
+                            <option value="Dibatalkan">Dibatalkan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="agLocation">Lokasi</label>
+                        <input id="agLocation" placeholder="Sekretariat / Online / Aula">
+                    </div>
+                    <div class="form-group full">
+                        <label for="agPIC">Penanggung Jawab (PIC)</label>
+                        <input id="agPIC" placeholder="Nama penanggung jawab kegiatan">
+                    </div>
+                    <div class="form-group full">
+                        <label for="agDesc">Deskripsi</label>
+                        <textarea id="agDesc" rows="3" placeholder="Jelaskan tujuan atau detail agenda..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="secondary-button" id="cancelAg">Batal</button>
+                    <button type="submit" class="primary-button">Simpan Agenda</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ====== MODAL DETAIL AGENDA ====== -->
+    <div class="detail-overlay" id="agDetailModal" role="dialog" aria-modal="true">
+        <div class="ag-detail-modal">
+            <button class="modal-close detail-close" id="closeAgDetail" aria-label="Tutup">×</button>
+            <div id="agDetailContent"></div>
+        </div>
+    </div>
+
+    <!-- ====== MODAL KONFIRMASI HAPUS ====== -->
+    <div class="modal-overlay" id="agDeleteModal" role="dialog" aria-modal="true">
+        <div class="ag-confirm-modal">
+            <div class="ag-confirm-icon">🗑️</div>
+            <h3>Hapus Agenda?</h3>
+            <p id="agDeleteMsg">Apakah kamu yakin ingin menghapus agenda ini? Tindakan ini tidak bisa dibatalkan.</p>
+            <div class="ag-confirm-actions">
+                <button class="secondary-button" id="cancelDelete">Batal</button>
+                <button class="ag-danger-btn" id="confirmDelete">Ya, Hapus</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="agenda.js"></script>
+</body>
+
+</html>
