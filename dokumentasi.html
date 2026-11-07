@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi | UKM FDI</title>
+    <meta name="description" content="Arsip dokumentasi kegiatan dan agenda UKM FDI Forum Diskusi Ilmiah.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dokumentasi.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <!-- ====== SIDEBAR ====== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">FDI</div>
+                <div class="organization-name">
+                    <h2>UKM FDI</h2>
+                    <span>Forum Diskusi Ilmiah</span>
+                </div>
+            </div>
+            <nav class="sidebar-menu">
+                <p class="menu-title">MENU UTAMA</p>
+                <a href="index.html" class="menu-item"><span class="menu-icon">⌂</span><span>Dashboard</span></a>
+                <a href="anggota.html" class="menu-item"><span class="menu-icon">👥</span><span>Anggota</span></a>
+                <a href="program-kerja.html" class="menu-item"><span class="menu-icon">▣</span><span>Program
+                        Kerja</span></a>
+                <a href="agenda.html" class="menu-item"><span class="menu-icon">◷</span><span>Agenda</span></a>
+                <p class="menu-title">ABOUT FDI</p>
+                <a href="dokumentasi.html" class="menu-item active"><span
+                        class="menu-icon">▧</span><span>Dokumentasi</span></a>
+                <a href="#" class="menu-item"><span class="menu-icon">★</span><span>Prestasi</span></a>
+                <a href="#" class="menu-item"><span class="menu-icon">♧</span><span>Open Recruitment</span></a>
+                <p class="menu-title">LAINNYA</p>
+                <a href="#" class="menu-item"><span class="menu-icon">◈</span><span>Laporan</span></a>
+                <a href="#" class="menu-item"><span class="menu-icon">⚙</span><span>Pengaturan</span></a>
+            </nav>
+            <div class="sidebar-user">
+                <div class="user-avatar">JA</div>
+                <div class="user-info"><strong>Julian Abi</strong><span>Ketua Umum</span></div>
+                <button class="logout-button">↪</button>
+            </div>
+        </aside>
+
+        <!-- ====== MAIN CONTENT ====== -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="page-title">
+                    <h1>Dokumentasi</h1>
+                    <p>Arsip dokumentasi kegiatan dan agenda UKM FDI.</p>
+                </div>
+                <div class="topbar-actions">
+                    <button class="notification-button" aria-label="Notifikasi">🔔<span
+                            class="notification-dot"></span></button>
+                    <div class="profile">
+                        <div class="profile-avatar">JA</div>
+                        <div><strong>Julian Abi</strong><span>Ketua Umum</span></div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="content dok-page">
+
+                <!-- ====== SUMMARY ====== -->
+                <div class="dok-summary">
+                    <div class="dok-stat dok-stat-blue">
+                        <div class="dok-stat-icon">▧</div>
+                        <div class="dok-stat-body"><span>Total Agenda</span><strong id="dokStatTotal">0</strong></div>
+                    </div>
+                    <div class="dok-stat dok-stat-green">
+                        <div class="dok-stat-icon">✓</div>
+                        <div class="dok-stat-body"><span>Terdokumentasi</span><strong id="dokStatDone">0</strong></div>
+                    </div>
+                    <div class="dok-stat dok-stat-orange">
+                        <div class="dok-stat-icon">✎</div>
+                        <div class="dok-stat-body"><span>Sedang Dibuat</span><strong id="dokStatProgress">0</strong>
+                        </div>
+                    </div>
+                    <div class="dok-stat dok-stat-red">
+                        <div class="dok-stat-icon">○</div>
+                        <div class="dok-stat-body"><span>Belum Ada</span><strong id="dokStatEmpty">0</strong></div>
+                    </div>
+                </div>
+
+                <!-- ====== TOOLBAR ====== -->
+                <div class="dok-toolbar">
+                    <div class="dok-toolbar-left">
+                        <div class="dok-search-box">
+                            <span>🔍</span>
+                            <input type="text" id="dokSearch" placeholder="Cari agenda...">
+                        </div>
+                        <select id="dokFilterDivisi" class="dok-select">
+                            <option value="">Semua Divisi</option>
+                            <option value="Pengurus Inti">Pengurus Inti</option>
+                            <option value="PSDM">PSDM</option>
+                            <option value="MENHAS">MENHAS</option>
+                            <option value="Organisasi">Organisasi</option>
+                            <option value="PKM">PKM</option>
+                            <option value="Prediksi">Prediksi</option>
+                        </select>
+                        <select id="dokFilterStatus" class="dok-select">
+                            <option value="">Semua Status Dok.</option>
+                            <option value="Selesai">Terdokumentasi</option>
+                            <option value="Sedang Dibuat">Sedang Dibuat</option>
+                            <option value="Belum Ada">Belum Ada</option>
+                        </select>
+                    </div>
+                    <div class="dok-toolbar-right">
+                        <div class="dok-view-toggle">
+                            <button id="btnDokGrid" class="ag-view-btn active" title="Tampilan Grid"
+                                aria-label="Grid view">⊞</button>
+                            <button id="btnDokList" class="ag-view-btn" title="Tampilan List"
+                                aria-label="List view">☰</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ====== GRID VIEW ====== -->
+                <div id="dokGridView" class="dok-grid" aria-live="polite"></div>
+
+                <!-- ====== LIST VIEW ====== -->
+                <div id="dokListView" class="dok-list hidden" aria-live="polite"></div>
+
+            </section>
+        </main>
+    </div>
+
+    <!-- ====== MODAL DOKUMENTASI ====== -->
+    <div class="modal-overlay" id="dokModal" role="dialog" aria-modal="true" aria-labelledby="dokModalTitle">
+        <div class="dok-modal">
+            <div class="modal-header">
+                <div>
+                    <h2 id="dokModalTitle">Tambah Dokumentasi</h2>
+                    <p id="dokModalSubtitle">Isi dokumentasi untuk agenda ini.</p>
+                </div>
+                <button class="modal-close" id="closeDokModal" aria-label="Tutup">×</button>
+            </div>
+            <form id="dokForm">
+                <input type="hidden" id="dokAgendaId">
+
+                <!-- Status -->
+                <div class="form-group" style="margin-bottom:16px;">
+                    <label for="dokStatus">Status Dokumentasi</label>
+                    <select id="dokStatus">
+                        <option value="Sedang Dibuat">Sedang Dibuat</option>
+                        <option value="Selesai">Selesai</option>
+                        <option value="Belum Ada">Belum Ada</option>
+                    </select>
+                </div>
+
+                <!-- Laporan -->
+                <div class="form-group" style="margin-bottom:16px;">
+                    <label for="dokLaporan">Laporan / Catatan Kegiatan</label>
+                    <textarea id="dokLaporan" rows="5"
+                        placeholder="Tulis laporan singkat pelaksanaan kegiatan, hasil, dan evaluasi..."></textarea>
+                </div>
+
+                <!-- Link Dokumen -->
+                <div class="form-group" style="margin-bottom:16px;">
+                    <label for="dokLink">Link Dokumen (Google Drive / PDF)</label>
+                    <input type="url" id="dokLink" placeholder="https://drive.google.com/...">
+                </div>
+
+                <!-- Foto Dokumentasi -->
+                <div class="form-group" style="margin-bottom:4px;">
+                    <label>Foto Dokumentasi</label>
+                    <p style="font-size:10px;color:#8a94a6;margin:4px 0 10px;">Masukkan URL foto (misalnya dari Google
+                        Drive / Imgur). Tambahkan hingga 6 foto.</p>
+                </div>
+                <div id="dokFotoFields" class="dok-foto-fields"></div>
+                <button type="button" class="dok-add-foto-btn" id="addFotoBtn">＋ Tambah URL Foto</button>
+
+                <div class="modal-footer" style="margin-top:20px;">
+                    <button type="button" class="secondary-button" id="cancelDok">Batal</button>
+                    <button type="submit" class="primary-button">Simpan Dokumentasi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ====== MODAL DETAIL ====== -->
+    <div class="detail-overlay" id="dokDetailModal" role="dialog" aria-modal="true">
+        <div class="dok-detail-modal">
+            <button class="modal-close detail-close" id="closeDokDetail" aria-label="Tutup">×</button>
+            <div id="dokDetailContent"></div>
+        </div>
+    </div>
+
+    <!-- ====== MODAL KONFIRMASI HAPUS ====== -->
+    <div class="modal-overlay" id="dokDeleteModal" role="dialog" aria-modal="true">
+        <div class="ag-confirm-modal">
+            <div class="ag-confirm-icon">🗑️</div>
+            <h3>Hapus Dokumentasi?</h3>
+            <p id="dokDeleteMsg">Apakah kamu yakin ingin menghapus dokumentasi ini?</p>
+            <div class="ag-confirm-actions">
+                <button class="secondary-button" id="cancelDokDelete">Batal</button>
+                <button class="ag-danger-btn" id="confirmDokDelete">Ya, Hapus</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dokumentasi.js"></script>
+</body>
+
+</html>

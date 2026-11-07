@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Open Recruitment | UKM FDI</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="recruitment.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <div class="logo">FDI</div>
+
+                <div class="organization-name">
+                    <h2>UKM FDI</h2>
+                    <span>Forum Diskusi Ilmiah</span>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <nav class="sidebar-menu">
+
+                <p class="menu-title">MENU UTAMA</p>
+
+                <a href="index.html" class="menu-item">
+                    <span class="menu-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="anggota.html" class="menu-item">
+                    <span class="menu-icon">👥</span>
+                    <span>Anggota</span>
+                </a>
+
+                <a href="program-kerja.html" class="menu-item">
+                    <span class="menu-icon">▣</span>
+                    <span>Program Kerja</span>
+                </a>
+
+                <a href="agenda.html" class="menu-item">
+                    <span class="menu-icon">◷</span>
+                    <span>Agenda</span>
+                </a>
+
+                <p class="menu-title">ABOUT FDI</p>
+
+                <a href="dokumentasi.html" class="menu-item">
+                    <span class="menu-icon">▧</span>
+                    <span>Dokumentasi</span>
+                </a>
+
+                <a href="prestasi.html" class="menu-item">
+                    <span class="menu-icon">★</span>
+                    <span>Prestasi</span>
+                </a>
+
+                <a href="recruitment.html" class="menu-item active">
+                    <span class="menu-icon">♧</span>
+                    <span>Open Recruitment</span>
+                </a>
+
+                <p class="menu-title">LAINNYA</p>
+
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">◈</span>
+                    <span>Laporan</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">⚙</span>
+                    <span>Pengaturan</span>
+                </a>
+
+            </nav>
+
+            <!-- Sidebar User -->
+            <div class="sidebar-user">
+
+                <div class="user-avatar">JA</div>
+
+                <div class="user-info">
+                    <strong>Julian Abi</strong>
+                    <span>Ketua Umum</span>
+                </div>
+
+                <button type="button" class="logout-button">
+                    ↪
+                </button>
+
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div class="page-title">
+                    <h1>Open Recruitment</h1>
+
+                    <p>
+                        Kelola informasi dan pendaftaran anggota baru UKM FDI.
+                    </p>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button type="button" class="notification-button">
+                        🔔
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <div class="profile">
+
+                        <div class="profile-avatar">JA</div>
+
+                        <div>
+                            <strong>Julian Abi</strong>
+                            <span>Ketua Umum</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- RECRUITMENT CONTENT -->
+            <section class="content feature-page">
+
+                <!-- HERO BANNER -->
+                <div class="recruit-hero">
+
+                    <div>
+
+                        <span class="hero-kicker">
+                            OPEN RECRUITMENT UKM FDI UMM
+                        </span>
+
+                        <h2>
+                            Saatnya jadi bagian dari keluarga besar Forum Diskusi Ilmiah!
+                        </h2>
+
+                        <p>
+                            Kembangkan potensi, perluas relasi, dan ciptakan karya bersama FDI.
+                        </p>
+
+                        <button
+                            type="button"
+                            id="heroEditBtn"
+                            class="hero-button"
+                        >
+                            Kelola Pendaftaran
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+                    <div class="hero-mark">
+                        FDI
+                        <span>✦</span>
+                    </div>
+
+                </div>
+
+                <!-- STATISTICS -->
+                <div class="feature-stats recruit-stats">
+
+                    <!-- Periode Pendaftaran -->
+                    <article class="feature-stat">
+
+                        <span class="stat-icon">📅</span>
+
+                        <div>
+                            <small>Periode Pendaftaran</small>
+
+                            <strong id="periodText">
+                                Belum diatur
+                            </strong>
+
+                            <em id="periodHint">
+                                Atur periode recruitment
+                            </em>
+                        </div>
+
+                    </article>
+
+                    <!-- Total Pendaftar -->
+                    <article class="feature-stat">
+
+                        <span class="stat-icon purple">👥</span>
+
+                        <div>
+                            <small>Total Pendaftar</small>
+
+                            <strong id="applicantCount">0</strong>
+
+                            <em>
+                                Data pendaftar tersimpan
+                            </em>
+                        </div>
+
+                    </article>
+
+                    <!-- Status Pendaftaran -->
+                    <article class="feature-stat">
+
+                        <span class="stat-icon orange">◷</span>
+
+                        <div>
+                            <small>Status Pendaftaran</small>
+
+                            <strong id="recruitStatus">
+                                Belum Dibuka
+                            </strong>
+
+                            <em id="quotaText">
+                                Kuota belum diatur
+                            </em>
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <!-- RECRUITMENT GRID -->
+                <div class="recruit-grid">
+
+                    <!-- Posisi yang Dibuka -->
+                    <section class="feature-panel">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h2>Posisi yang Dibuka</h2>
+
+                                <p>
+                                    Divisi yang dapat dipilih calon anggota.
+                                </p>
+                            </div>
+
+                            <button
+                                type="button"
+                                class="text-button"
+                                id="managePositions"
+                            >
+                                Kelola posisi
+                            </button>
+
+                        </div>
+
+                        <div
+                            id="positionList"
+                            class="position-list"
+                        ></div>
+
+                    </section>
+
+                    <!-- Alur Pendaftaran -->
+                    <section class="feature-panel">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h2>Alur Pendaftaran</h2>
+
+                                <p>
+                                    Tahapan seleksi calon anggota.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="steps">
+
+                            <div>
+                                <b>1</b>
+                                <strong>Isi Form</strong>
+                                <small>Pendaftaran</small>
+                            </div>
+
+                            <i></i>
+
+                            <div>
+                                <b>2</b>
+                                <strong>Seleksi</strong>
+                                <small>Administrasi</small>
+                            </div>
+
+                            <i></i>
+
+                            <div>
+                                <b>3</b>
+                                <strong>Wawancara</strong>
+                                <small>Calon anggota</small>
+                            </div>
+
+                            <i></i>
+
+                            <div>
+                                <b>4</b>
+                                <strong>Pengumuman</strong>
+                                <small>Hasil seleksi</small>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+                <!-- APPLICANT DATA -->
+                <section class="feature-panel applicant-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h2>Data Pendaftar</h2>
+
+                            <p>
+                                Daftar calon anggota yang sudah mengisi formulir.
+                            </p>
+                        </div>
+
+                        <span class="soft-badge">
+                            Admin FDI
+                        </span>
+
+                    </div>
+
+                    <!-- Applicant Table -->
+                    <div class="table-wrap">
+
+                        <table class="applicant-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Program Studi</th>
+                                    <th>Posisi Pilihan</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="applicantRows"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- MODAL PENGATURAN RECRUITMENT -->
+    <dialog id="recruitDialog" class="feature-dialog">
+
+        <form id="recruitForm">
+
+            <div class="dialog-head">
+
+                <div>
+                    <h2>Pengaturan Recruitment</h2>
+
+                    <p>
+                        Atur periode, kuota, dan status pendaftaran.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="close-dialog"
+                    data-close
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <!-- Tanggal Mulai -->
+            <label>
+                Tanggal mulai
+
+                <input
+                    type="date"
+                    name="start"
+                    required
+                >
+            </label>
+
+            <!-- Tanggal Berakhir -->
+            <label>
+                Tanggal berakhir
+
+                <input
+                    type="date"
+                    name="end"
+                    required
+                >
+            </label>
+
+            <!-- Form Grid -->
+            <div class="form-grid">
+
+                <label>
+                    Kuota anggota
+
+                    <input
+                        type="number"
+                        name="quota"
+                        min="1"
+                        value="30"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Status
+
+                    <select name="status">
+                        <option value="open">Dibuka</option>
+                        <option value="closed">Ditutup</option>
+                    </select>
+                </label>
+
+            </div>
+
+            <!-- Dialog Actions -->
+            <div class="dialog-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-close
+                >
+                    Batal
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Simpan Pengaturan
+                </button>
+
+            </div>
+
+        </form>
+
+    </dialog>
+
+    <!-- MODAL KELOLA POSISI -->
+    <dialog id="positionDialog" class="feature-dialog">
+
+        <form id="positionForm">
+
+            <div class="dialog-head">
+
+                <div>
+                    <h2>Kelola Posisi</h2>
+
+                    <p>
+                        Pilih posisi yang sedang dibuka.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="close-dialog"
+                    data-close
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <!-- Position Checkboxes -->
+            <div
+                id="positionChecks"
+                class="position-checks"
+            ></div>
+
+            <!-- Dialog Actions -->
+            <div class="dialog-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-close
+                >
+                    Batal
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Simpan Posisi
+                </button>
+
+            </div>
+
+        </form>
+
+    </dialog>
+
+    <!-- JAVASCRIPT -->
+    <script src="recruitment.js"></script>
+
+</body>
+</html>
