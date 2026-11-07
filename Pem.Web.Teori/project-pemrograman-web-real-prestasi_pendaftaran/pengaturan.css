@@ -1,0 +1,437 @@
+
+/* ==================================================
+   PENGATURAN.CSS - UKM FDI
+================================================== */
+
+.settings-page {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 28px 30px;
+    box-sizing: border-box;
+}
+
+/* HEADING */
+
+.settings-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.settings-heading h2 {
+    margin: 0 0 6px;
+    color: #172033;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.settings-heading p {
+    margin: 0;
+    color: #98a2b3;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* LAYOUT */
+
+.settings-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CARD */
+
+.settings-card {
+    width: 100%;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid #e8ebf1;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(16, 24, 40, 0.025);
+    box-sizing: border-box;
+}
+
+.settings-card-heading {
+    margin-bottom: 22px;
+}
+
+.settings-card-heading h3 {
+    margin: 0 0 6px;
+    color: #172033;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.settings-card-heading p {
+    margin: 0;
+    color: #98a2b3;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* FOTO PROFIL */
+
+.profile-photo-section {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 18px;
+    margin-bottom: 24px;
+    background: #f8fafc;
+    border: 1px solid #edf0f4;
+    border-radius: 10px;
+}
+
+.profile-photo-preview {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border: 3px solid #e5edff;
+    border-radius: 50%;
+    background: #e8efff;
+    color: #155eef;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.profile-photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-photo-info {
+    min-width: 0;
+}
+
+.profile-photo-info h4 {
+    margin: 0 0 6px;
+    color: #172033;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.profile-photo-info p {
+    margin: 0 0 12px;
+    color: #667085;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.profile-photo-info small {
+    display: block;
+    margin-top: 10px;
+    color: #98a2b3;
+    font-size: 10px;
+}
+
+.profile-photo-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px;
+}
+
+.photo-upload-button,
+.photo-remove-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 0 13px;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.photo-upload-button {
+    background: #155eef;
+    color: #fff;
+}
+
+.photo-upload-button:hover {
+    background: #0d4dcc;
+}
+
+.photo-upload-button span {
+    margin-right: 6px;
+    font-size: 15px;
+}
+
+.photo-remove-button {
+    border: 1px solid #e4e7ec;
+    background: #fff;
+    color: #667085;
+}
+
+.photo-remove-button:hover {
+    border-color: #fca5a5;
+    background: #fff5f5;
+    color: #dc2626;
+}
+
+/* FORM GRID */
+
+.settings-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.settings-form-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 8px;
+}
+
+.settings-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.settings-form-group label {
+    color: #475467;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.settings-form-group input,
+.settings-form-group textarea,
+.settings-form-group select {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid #dfe3eb;
+    border-radius: 8px;
+    outline: none;
+    background: #fff;
+    color: #344054;
+    font-family: inherit;
+    font-size: 11px;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.settings-form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.settings-form-group input:focus,
+.settings-form-group textarea:focus,
+.settings-form-group select:focus {
+    border-color: #84adff;
+    box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.08);
+}
+
+.settings-form-group input::placeholder,
+.settings-form-group textarea::placeholder {
+    color: #b0b8c5;
+}
+
+/* PREFERENSI */
+
+.settings-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f1f4;
+}
+
+.settings-option:last-child {
+    border-bottom: none;
+}
+
+.settings-option-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.settings-option-info strong {
+    color: #344054;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.settings-option-info span {
+    color: #98a2b3;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+/* CHECKBOX */
+
+.settings-option input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: #155eef;
+    cursor: pointer;
+}
+
+/* FOOTER ACTION */
+
+.settings-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.settings-save-button {
+    min-height: 40px;
+    padding: 0 19px;
+    border: none;
+    border-radius: 8px;
+    background: #155eef;
+    color: #fff;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.settings-save-button:hover {
+    background: #0d4dcc;
+    box-shadow: 0 4px 10px rgba(21, 94, 239, 0.15);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .settings-page {
+        padding: 22px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .settings-page {
+        padding: 18px 14px;
+    }
+
+    .settings-card {
+        padding: 17px;
+    }
+
+    .settings-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-form-group.full-width {
+        grid-column: auto;
+    }
+
+    .profile-photo-section {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .settings-footer {
+        flex-direction: column;
+    }
+
+    .settings-save-button {
+        width: 100%;
+    }
+
+    .settings-option {
+        align-items: flex-start;
+    }
+}
+
+/* PREFERENSI SISTEM - PENYESUAIAN */
+
+.settings-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 17px 0;
+    border-bottom: 1px solid #f0f1f4;
+    cursor: pointer;
+}
+
+.settings-option:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.settings-option-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.settings-option-info strong {
+    color: #344054;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.settings-option-info span {
+    color: #98a2b3;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.settings-option input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    accent-color: #155eef;
+    cursor: pointer;
+}
+
+.settings-page .settings-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.settings-page .settings-card {
+    margin: 0;
+}
+
+.settings-page .settings-form-grid {
+    margin-top: 5px;
+}
+
+.settings-page .settings-card-heading {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f1f4;
+}
+
+.settings-page .settings-footer {
+    margin-top: 20px;
+}
+
+.settings-page .report-footnote {
+    margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+    .settings-option {
+        align-items: flex-start;
+    }
+
+    .settings-page .settings-card {
+        padding: 17px;
+    }
+}

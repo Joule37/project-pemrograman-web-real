@@ -1,0 +1,305 @@
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="fitur-baru.css">
+<link rel="stylesheet" href="laporan.css">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan | UKM FDI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fitur-baru.css">
+    <link rel="stylesheet" href="laporan.css">
+</head>
+
+<body>
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">FDI</div>
+            <div class="organization-name">
+                <h2>UKM FDI</h2>
+                <span>Forum Diskusi Ilmiah</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <p class="menu-title">MENU UTAMA</p>
+
+            <a href="index.html" class="menu-item">
+                <span class="menu-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+            <a href="anggota.html" class="menu-item">
+                <span class="menu-icon">👥</span>
+                <span>Anggota</span>
+            </a>
+            <a href="program-kerja.html" class="menu-item">
+                <span class="menu-icon">▣</span>
+                <span>Program Kerja</span>
+            </a>
+            <a href="agenda.html" class="menu-item">
+                <span class="menu-icon">◷</span>
+                <span>Agenda</span>
+            </a>
+
+            <p class="menu-title">ABOUT FDI</p>
+
+            <a href="dokumentasi.html" class="menu-item">
+                <span class="menu-icon">▧</span>
+                <span>Dokumentasi</span>
+            </a>
+            <a href="prestasi.html" class="menu-item">
+                <span class="menu-icon">★</span>
+                <span>Prestasi</span>
+            </a>
+            <a href="open-recruitment.html" class="menu-item">
+                <span class="menu-icon">♧</span>
+                <span>Open Recruitment</span>
+            </a>
+
+            <p class="menu-title">LAINNYA</p>
+
+            <a href="laporan.html" class="menu-item active">
+                <span class="menu-icon">◈</span>
+                <span>Laporan</span>
+            </a>
+            <a href="pengaturan.html" class="menu-item">
+                <span class="menu-icon">⚙</span>
+                <span>Pengaturan</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-user">
+            <div class="user-avatar">JA</div>
+            <div class="user-info">
+                <strong>Julian Abi</strong>
+                <span>Ketua Umum</span>
+            </div>
+            <button class="logout-button">↪</button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="page-title">
+                <h1>Laporan</h1>
+                <p>Pantau perkembangan dan evaluasi program kerja UKM FDI.</p>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="notification-button">
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile">
+                    <div class="profile-avatar">JA</div>
+                    <div>
+                        <strong>Julian Abi</strong>
+                        <span>Ketua Umum</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="content feature-page report-page">
+
+            <!-- JUDUL DAN FILTER -->
+            <div class="report-page-heading">
+                <div>
+                    <h2>Statistik Program Kerja</h2>
+                    <p>
+                        Ringkasan pelaksanaan dan perkembangan program kerja
+                        selama periode kepengurusan.
+                    </p>
+                    <span class="report-period" id="reportPeriod">
+                        Periode Kepengurusan
+                    </span>
+                </div>
+
+                <button class="primary-button" id="downloadPDF">
+                    ↓ Unduh Laporan PDF
+                </button>
+            </div>
+
+            <!-- KARTU STATISTIK -->
+            <div class="report-stats-grid">
+
+                <article class="report-stat-card total">
+                    <div class="stat-card-top">
+                        <span>Total Program Kerja</span>
+                        <span class="stat-icon">▣</span>
+                    </div>
+                    <strong id="reportTotal">0</strong>
+                    <small>Seluruh program tercatat</small>
+                </article>
+
+                <article class="report-stat-card completed">
+                    <div class="stat-card-top">
+                        <span>Program Selesai</span>
+                        <span class="stat-icon">✓</span>
+                    </div>
+                    <strong id="reportCompleted">0</strong>
+                    <small>Program telah terlaksana</small>
+                </article>
+
+                <article class="report-stat-card running">
+                    <div class="stat-card-top">
+                        <span>Sedang Berjalan</span>
+                        <span class="stat-icon">◷</span>
+                    </div>
+                    <strong id="reportRunning">0</strong>
+                    <small>Program dalam pengerjaan</small>
+                </article>
+
+                <article class="report-stat-card pending">
+                    <div class="stat-card-top">
+                        <span>Belum Dimulai</span>
+                        <span class="stat-icon">○</span>
+                    </div>
+                    <strong id="reportPending">0</strong>
+                    <small>Program belum terlaksana</small>
+                </article>
+
+            </div>
+
+            <!-- PROGRESS DAN GRAFIK -->
+            <div class="report-main-grid">
+
+                <article class="report-panel progress-panel">
+                    <div class="report-panel-heading">
+                        <div>
+                            <h3>Persentase Penyelesaian</h3>
+                            <p>Perbandingan program selesai dengan seluruh program.</p>
+                        </div>
+                    </div>
+
+                    <div class="progress-summary">
+                        <strong id="completionPercentage">0%</strong>
+                        <span id="completionDescription">0 dari 0 program selesai</span>
+                    </div>
+
+                    <div class="progress-track">
+                        <div class="progress-fill" id="completionBar"></div>
+                    </div>
+
+                    <div class="progress-legend">
+                        <span><i class="legend-dot green"></i> Selesai</span>
+                        <span><i class="legend-dot blue"></i> Berjalan</span>
+                        <span><i class="legend-dot orange"></i> Belum dimulai</span>
+                    </div>
+                </article>
+
+                <article class="report-panel">
+                    <div class="report-panel-heading">
+                        <div>
+                            <h3>Komposisi Program Kerja</h3>
+                            <p>Jumlah program berdasarkan status.</p>
+                        </div>
+                    </div>
+
+                    <div id="statusChart" class="status-chart"></div>
+                </article>
+
+            </div>
+
+            <!-- STATISTIK DIVISI -->
+            <article class="report-panel division-panel">
+                <div class="report-panel-heading">
+                    <div>
+                        <h3>Perkembangan per Divisi</h3>
+                        <p>Perbandingan jumlah program kerja dan penyelesaiannya.</p>
+                    </div>
+                </div>
+
+                <div id="divisionStatistics" class="division-statistics"></div>
+            </article>
+
+            <!-- DAFTAR PROGRAM KERJA -->
+            <article class="report-panel program-table-panel">
+                <div class="report-panel-heading">
+                    <div>
+                        <h3>Rincian Program Kerja</h3>
+                        <p>Daftar program kerja beserta status pelaksanaannya.</p>
+                    </div>
+
+                    <span class="table-total" id="tableTotal">0 Program</span>
+                </div>
+
+                <div class="report-table-wrapper">
+                    <table class="report-table">
+                        <thead>
+                            <tr>
+                                <th>Nama Program</th>
+                                <th>Divisi</th>
+                                <th>Tanggal</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="programTableBody">
+                            <tr>
+                                <td colspan="4" class="empty-table">
+                                    Memuat data program kerja...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <!-- RINGKASAN ORGANISASI -->
+            <article class="report-panel organization-summary">
+                <div class="report-panel-heading">
+                    <div>
+                        <h3>Informasi Organisasi</h3>
+                        <p>Data tambahan untuk melengkapi laporan kepengurusan.</p>
+                    </div>
+                </div>
+
+                <div class="organization-summary-grid">
+                    <div>
+                        <span>Total Anggota</span>
+                        <strong id="reportMembers">0</strong>
+                    </div>
+                    <div>
+                        <span>Total Agenda</span>
+                        <strong id="reportAgendas">0</strong>
+                    </div>
+                    <div>
+                        <span>Total Prestasi</span>
+                        <strong id="reportAchievements">0</strong>
+                    </div>
+                    <div>
+                        <span>Pendaftar Open Recruitment</span>
+                        <strong id="reportApplicants">0</strong>
+                    </div>
+                </div>
+            </article>
+
+            <p class="report-footnote">
+                Data laporan diambil dari penyimpanan browser pada perangkat ini.
+                Pastikan data program kerja telah diperbarui sebelum mengunduh laporan.
+            </p>
+
+        </section>
+    </main>
+</div>
+
+<!-- jsPDF untuk membuat dokumen PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="laporan.js"></script>
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="laporan.js"></script>

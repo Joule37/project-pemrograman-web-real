@@ -1,0 +1,575 @@
+
+/* ================================
+   FEATURE PAGE
+================================ */
+
+.feature-page {
+    padding-top: 28px;
+}
+
+/* ================================
+   STATISTICS
+================================ */
+
+.feature-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.feature-stat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 112px;
+}
+
+.feature-stat,
+.feature-panel {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e5eaf2;
+    border-radius: 11px;
+    box-shadow: 0 2px 5px #17203308;
+}
+
+.stat-icon {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    background: #edf4ff;
+    font-size: 21px;
+}
+
+.stat-icon.orange {
+    background: #fff4e8;
+}
+
+.stat-icon.purple {
+    background: #f3efff;
+}
+
+.feature-stat small,
+.feature-stat em {
+    display: block;
+    color: #8792a5;
+    font-size: 11px;
+    font-style: normal;
+}
+
+.feature-stat strong {
+    display: block;
+    margin: 3px 0;
+    color: #17233d;
+    font-size: 24px;
+}
+
+/* ================================
+   TOOLBAR
+================================ */
+
+.feature-toolbar,
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.feature-toolbar {
+    margin: 10px 0 18px;
+}
+
+.feature-toolbar h2,
+.panel-heading h2 {
+    font-size: 18px;
+}
+
+.feature-toolbar p,
+.panel-heading p {
+    margin-top: 5px;
+    color: #8792a5;
+    font-size: 12px;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.primary-button,
+.secondary-button {
+    padding: 11px 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.primary-button {
+    background: #155eef;
+    color: #fff;
+}
+
+.primary-button:hover {
+    background: #0e4ecb;
+}
+
+.secondary-button {
+    background: #f1f4f9;
+    color: #475467;
+}
+
+.secondary-button:hover {
+    background: #e5eaf2;
+}
+
+.mini-btn {
+    padding: 5px 8px;
+    border-radius: 6px;
+    background: #f2f5fa;
+    color: #475467;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.mini-btn:hover {
+    background: #e4eaf3;
+}
+
+/* ================================
+   FILTER
+================================ */
+
+.filter-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.filter-row input,
+.filter-row select,
+.feature-dialog input,
+.feature-dialog select,
+.feature-dialog textarea {
+    padding: 11px 12px;
+    border: 1px solid #e1e6ef;
+    border-radius: 8px;
+    background: #fff;
+    color: #344054;
+    font: inherit;
+    font-size: 12px;
+}
+
+.filter-row input {
+    flex: 1;
+    min-width: 0;
+}
+
+.filter-row select {
+    min-width: 145px;
+}
+
+.filter-row input:focus,
+.filter-row select:focus,
+.feature-dialog input:focus,
+.feature-dialog select:focus,
+.feature-dialog textarea:focus {
+    outline: none;
+    border-color: #155eef;
+    box-shadow: 0 0 0 3px #155eef15;
+}
+
+/* ================================
+   AWARD LIST
+================================ */
+
+.award-list {
+    overflow: hidden;
+    border: 1px solid #e5eaf2;
+    border-radius: 11px;
+    background: #fff;
+}
+
+.award-item {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+    padding: 17px 20px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.award-item:last-child {
+    border-bottom: 0;
+}
+
+.award-medal {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #fff6e8;
+    font-size: 22px;
+}
+
+.award-information {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.award-item h3 {
+    margin-bottom: 5px;
+    color: #17233d;
+    font-size: 13px;
+}
+
+.award-item p {
+    margin-bottom: 3px;
+    color: #8792a5;
+    font-size: 11px;
+}
+
+.award-meta {
+    display: grid;
+    justify-items: end;
+    gap: 7px;
+    color: #8792a5;
+    font-size: 10px;
+    text-align: right;
+}
+
+.award-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 9px;
+}
+
+/* ================================
+   BADGES
+================================ */
+
+.category-badge,
+.soft-badge {
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #edf4ff;
+    color: #155eef;
+    font-size: 10px;
+}
+
+.category-badge.non {
+    background: #f3efff;
+    color: #7950c7;
+}
+
+.category-badge.org {
+    background: #e9f8f1;
+    color: #16865b;
+}
+
+/* ================================
+   EMPTY STATE
+================================ */
+
+.empty-state {
+    padding: 35px;
+    color: #8792a5;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* ================================
+   ENCOURAGEMENT BANNER
+================================ */
+
+.encourage-banner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+    padding: 18px 22px;
+    border-radius: 11px;
+    background: #eaf1ff;
+    color: #173b80;
+}
+
+.encourage-banner > span {
+    font-size: 26px;
+}
+
+.encourage-banner strong {
+    font-size: 13px;
+}
+
+.encourage-banner p {
+    margin-top: 4px;
+    font-size: 11px;
+}
+
+.encourage-banner b {
+    margin-left: auto;
+    font-size: 34px;
+}
+
+/* ================================
+   DIALOG / MODAL
+================================ */
+
+.feature-dialog {
+    width: min(540px, calc(100% - 28px));
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px #10182830;
+}
+
+.feature-dialog::backdrop {
+    background: #10182880;
+}
+
+.feature-dialog form {
+    display: grid;
+    gap: 14px;
+    padding: 24px;
+}
+
+.dialog-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.dialog-head h2 {
+    font-size: 18px;
+}
+
+.dialog-head p {
+    margin-top: 5px;
+    color: #8792a5;
+    font-size: 11px;
+}
+
+.close-dialog {
+    background: transparent;
+    color: #8792a5;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.feature-dialog label {
+    display: grid;
+    gap: 7px;
+    color: #475467;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.feature-dialog textarea {
+    resize: vertical;
+}
+
+/* Memastikan elemen hidden tidak muncul */
+.feature-dialog [hidden] {
+    display: none !important;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+/* ================================
+   PAPER / KARYA ILMIAH
+================================ */
+
+.paper-form-section {
+    display: grid;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid #e5eaf2;
+    border-radius: 10px;
+    background: #f8faff;
+}
+
+.paper-form-section h3 {
+    color: #17233d;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.paper-form-section label {
+    display: grid;
+    gap: 7px;
+}
+
+.paper-form-section small {
+    color: #8792a5;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Input PDF */
+
+.paper-form-section input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    color: #475467;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.paper-form-section input[type="file"]::file-selector-button {
+    margin-right: 10px;
+    padding: 7px 10px;
+    border: 0;
+    border-radius: 6px;
+    background: #edf4ff;
+    color: #155eef;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* Checkbox hapus PDF */
+
+.paper-form-section input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    padding: 0;
+    accent-color: #155eef;
+    cursor: pointer;
+}
+
+.paper-form-section label span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #d92d20;
+    font-weight: 500;
+}
+
+/* Tombol paper */
+
+.paper-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 9px;
+    border: 0;
+    border-radius: 6px;
+    background: #edf4ff;
+    color: #155eef;
+    cursor: pointer;
+    font-size: 10px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.paper-btn:hover {
+    background: #dce9ff;
+}
+
+/* Tombol Google Drive */
+
+.drive-btn {
+    background: #e9f8f1;
+    color: #16865b;
+}
+
+.drive-btn:hover {
+    background: #d5f1e3;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 800px) {
+
+    .feature-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-row {
+        flex-wrap: wrap;
+    }
+
+    .filter-row input {
+        flex-basis: 100%;
+    }
+
+    .award-item {
+        grid-template-columns: 42px minmax(0, 1fr);
+    }
+
+    .award-meta {
+        grid-column: 2;
+        justify-items: start;
+        text-align: left;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .feature-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .feature-toolbar .primary-button {
+        width: 100%;
+    }
+
+    .filter-row select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .award-item {
+        gap: 10px;
+        padding: 14px;
+    }
+
+    .award-actions {
+        gap: 5px;
+    }
+
+    .feature-dialog form {
+        padding: 18px;
+    }
+
+    .encourage-banner {
+        padding: 15px;
+    }
+
+    .encourage-banner b {
+        font-size: 25px;
+    }
+}

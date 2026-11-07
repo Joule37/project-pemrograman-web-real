@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pengaturan | UKM FDI</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS UTAMA -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fitur-baru.css">
+    <link rel="stylesheet" href="pengaturan.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <div class="logo">FDI</div>
+
+                <div class="organization-name">
+                    <h2>UKM FDI</h2>
+                    <span>Forum Diskusi Ilmiah</span>
+                </div>
+            </div>
+
+            <!-- NAVIGATION -->
+            <nav class="sidebar-menu">
+
+                <p class="menu-title">MENU UTAMA</p>
+
+                <a href="index.html" class="menu-item">
+                    <span class="menu-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="anggota.html" class="menu-item">
+                    <span class="menu-icon">👥</span>
+                    <span>Anggota</span>
+                </a>
+
+                <a href="program-kerja.html" class="menu-item">
+                    <span class="menu-icon">▣</span>
+                    <span>Program Kerja</span>
+                </a>
+
+                <a href="agenda.html" class="menu-item">
+                    <span class="menu-icon">◷</span>
+                    <span>Agenda</span>
+                </a>
+
+                <p class="menu-title">ABOUT FDI</p>
+
+                <a href="dokumentasi.html" class="menu-item">
+                    <span class="menu-icon">▧</span>
+                    <span>Dokumentasi</span>
+                </a>
+
+                <a href="prestasi.html" class="menu-item">
+                    <span class="menu-icon">★</span>
+                    <span>Prestasi</span>
+                </a>
+
+                <a href="open-recruitment.html" class="menu-item">
+                    <span class="menu-icon">♧</span>
+                    <span>Open Recruitment</span>
+                </a>
+
+                <p class="menu-title">LAINNYA</p>
+
+                <a href="laporan.html" class="menu-item">
+                    <span class="menu-icon">◈</span>
+                    <span>Laporan</span>
+                </a>
+
+                <a href="pengaturan.html" class="menu-item active">
+                    <span class="menu-icon">⚙</span>
+                    <span>Pengaturan</span>
+                </a>
+
+            </nav>
+
+            <!-- SIDEBAR USER -->
+            <div class="sidebar-user">
+
+                <div class="user-avatar">JA</div>
+
+                <div class="user-info">
+                    <strong>Julian Abi</strong>
+                    <span>Ketua Umum</span>
+                </div>
+
+                <button class="logout-button">↪</button>
+
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div class="page-title">
+                    <h1>Pengaturan</h1>
+                    <p>
+                        Kelola identitas organisasi dan preferensi sistem.
+                    </p>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button class="notification-button">
+                        🔔
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <div class="profile">
+
+                        <div class="profile-avatar">JA</div>
+
+                        <div>
+                            <strong>Julian Abi</strong>
+                            <span>Ketua Umum</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- CONTENT -->
+            <section class="content settings-page">
+
+                <!-- PAGE HEADING -->
+                <div class="settings-heading">
+
+                    <div>
+                        <h2>Pengaturan Sistem</h2>
+                        <p>
+                            Atur identitas organisasi dan informasi profil pengelola.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="settings-layout">
+
+                    <!-- =================================
+                         PROFIL ORGANISASI
+                    ================================== -->
+                    <section class="settings-card">
+
+                        <div class="settings-card-heading">
+                            <h3>Profil Organisasi</h3>
+                            <p>
+                                Informasi dasar dan identitas UKM FDI.
+                            </p>
+                        </div>
+
+                        <div class="settings-form-grid">
+
+                            <div class="settings-form-group full-width">
+                                <label for="orgName">
+                                    Nama Organisasi
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="orgName"
+                                    value="UKM FDI"
+                                    placeholder="Masukkan nama organisasi"
+                                >
+                            </div>
+
+                            <div class="settings-form-group full-width">
+                                <label for="orgFull">
+                                    Kepanjangan Organisasi
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="orgFull"
+                                    value="Forum Diskusi Ilmiah"
+                                    placeholder="Masukkan kepanjangan organisasi"
+                                >
+                            </div>
+
+                            <div class="settings-form-group">
+                                <label for="orgEmail">
+                                    Email Organisasi
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="orgEmail"
+                                    placeholder="email@organisasi.com"
+                                >
+                            </div>
+
+                            <div class="settings-form-group">
+                                <label for="orgPeriod">
+                                    Periode Kepengurusan
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="orgPeriod"
+                                    value="2026"
+                                    placeholder="Contoh: 2026/2027"
+                                >
+                            </div>
+
+                            <div class="settings-form-group full-width">
+                                <label for="orgDescription">
+                                    Deskripsi Singkat
+                                </label>
+
+                                <textarea
+                                    id="orgDescription"
+                                    rows="4"
+                                    placeholder="Tuliskan deskripsi organisasi..."
+                                >Wadah pengembangan minat, bakat, dan kemampuan mahasiswa dalam bidang karya ilmiah dan diskusi akademik.</textarea>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================
+                         PROFIL PENGELOLA
+                    ================================== -->
+                    <section class="settings-card">
+
+                        <div class="settings-card-heading">
+                            <h3>Profil Pengelola</h3>
+                            <p>
+                                Kelola informasi dan foto profil pengelola sistem.
+                            </p>
+                        </div>
+
+                        <!-- FOTO PROFIL -->
+                        <div class="profile-photo-section">
+
+                            <div
+                                class="profile-photo-preview"
+                                id="profilePhotoPreview"
+                            >
+                                <span id="profilePhotoInitial">JA</span>
+                            </div>
+
+                            <div class="profile-photo-info">
+
+                                <h4>Foto Profil</h4>
+
+                                <p>
+                                    Unggah foto untuk mengganti avatar
+                                    profil pengelola.
+                                </p>
+
+                                <div class="profile-photo-actions">
+
+                                    <label
+                                        for="profilePhotoInput"
+                                        class="photo-upload-button"
+                                    >
+                                        <span>↑</span>
+                                        Pilih Foto
+                                    </label>
+
+                                    <button
+                                        type="button"
+                                        id="removeProfilePhoto"
+                                        class="photo-remove-button"
+                                    >
+                                        Hapus Foto
+                                    </button>
+
+                                </div>
+
+                                <small>
+                                    Format JPG, PNG, atau WEBP. Maksimal 5 MB.
+                                </small>
+
+                                <input
+                                    type="file"
+                                    id="profilePhotoInput"
+                                    accept="image/png, image/jpeg, image/webp"
+                                    hidden
+                                >
+
+                            </div>
+
+                        </div>
+
+                        <!-- FORM PENGELOLA -->
+                        <div class="settings-form-grid">
+
+                            <div class="settings-form-group full-width">
+                                <label for="adminName">
+                                    Nama Pengelola
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="adminName"
+                                    value="Julian Abi"
+                                    placeholder="Masukkan nama pengelola"
+                                >
+                            </div>
+
+                            <div class="settings-form-group full-width">
+                                <label for="adminRole">
+                                    Jabatan
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="adminRole"
+                                    value="Ketua Umum"
+                                    placeholder="Masukkan jabatan"
+                                >
+                            </div>
+
+                            <div class="settings-form-group full-width">
+                                <label for="adminEmail">
+                                    Email Akun
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="adminEmail"
+                                    placeholder="email@contoh.com"
+                                >
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================
+                         PREFERENSI SISTEM
+                    ================================== -->
+                    <section class="settings-card">
+
+                        <div class="settings-card-heading">
+                            <h3>Preferensi Sistem</h3>
+                            <p>
+                                Atur perilaku dan preferensi penggunaan dashboard.
+                            </p>
+                        </div>
+
+                        <label class="settings-option">
+
+                            <span class="settings-option-info">
+                                <strong>Notifikasi Dashboard</strong>
+
+                                <span>
+                                    Tampilkan indikator notifikasi pada dashboard.
+                                </span>
+                            </span>
+
+                            <input
+                                type="checkbox"
+                                id="notifications"
+                                checked
+                            >
+
+                        </label>
+
+                        <label class="settings-option">
+
+                            <span class="settings-option-info">
+                                <strong>Konfirmasi Sebelum Menghapus</strong>
+
+                                <span>
+                                    Minta persetujuan sebelum data dihapus.
+                                </span>
+                            </span>
+
+                            <input
+                                type="checkbox"
+                                id="confirmDelete"
+                                checked
+                            >
+
+                        </label>
+
+                    </section>
+
+                </div>
+
+                <!-- SAVE BUTTON -->
+                <div class="settings-footer">
+
+                    <button
+                        type="button"
+                        class="settings-save-button"
+                        id="saveSettings"
+                    >
+                        Simpan Perubahan
+                    </button>
+
+                </div>
+
+                <!-- NOTE -->
+                <p class="report-footnote">
+                    Catatan: Pengaturan dan foto profil disimpan pada
+                    penyimpanan browser ini (localStorage). Fitur ini
+                    belum menggunakan database atau server.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="pengaturan.js"></script>
+
+</body>
+</html>

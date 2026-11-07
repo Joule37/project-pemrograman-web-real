@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prestasi | UKM FDI</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prestasi.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+
+                <div class="logo">
+                    FDI
+                </div>
+
+                <div class="organization-name">
+                    <h2>UKM FDI</h2>
+                    <span>Forum Diskusi Ilmiah</span>
+                </div>
+
+            </div>
+
+            <!-- SIDEBAR MENU -->
+            <nav class="sidebar-menu">
+
+                <p class="menu-title">MENU UTAMA</p>
+
+                <a href="index.html" class="menu-item">
+                    <span class="menu-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="anggota.html" class="menu-item">
+                    <span class="menu-icon">👥</span>
+                    <span>Anggota</span>
+                </a>
+
+                <a href="program-kerja.html" class="menu-item">
+                    <span class="menu-icon">▣</span>
+                    <span>Program Kerja</span>
+                </a>
+
+                <a href="agenda.html" class="menu-item">
+                    <span class="menu-icon">◷</span>
+                    <span>Agenda</span>
+                </a>
+
+                <p class="menu-title">ABOUT FDI</p>
+
+                <a href="dokumentasi.html" class="menu-item">
+                    <span class="menu-icon">▧</span>
+                    <span>Dokumentasi</span>
+                </a>
+
+                <a href="prestasi.html" class="menu-item active">
+                    <span class="menu-icon">★</span>
+                    <span>Prestasi</span>
+                </a>
+
+                <a href="recruitment.html" class="menu-item">
+                    <span class="menu-icon">♧</span>
+                    <span>Open Recruitment</span>
+                </a>
+
+                <p class="menu-title">LAINNYA</p>
+
+                <a href="laporan.html" class="menu-item">
+                    <span class="menu-icon">◈</span>
+                    <span>Laporan</span>
+                </a>
+
+                <a href="pengaturan.html" class="menu-item">
+                    <span class="menu-icon">⚙</span>
+                    <span>Pengaturan</span>
+                </a>
+
+            </nav>
+
+            <!-- SIDEBAR USER -->
+            <div class="sidebar-user">
+
+                <div class="user-avatar">
+                    JA
+                </div>
+
+                <div class="user-info">
+                    <strong>Julian Abi</strong>
+                    <span>Ketua Umum</span>
+                </div>
+
+                <button type="button" class="logout-button">
+                    ↪
+                </button>
+
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div class="page-title">
+                    <h1>Prestasi</h1>
+                    <p>Pencapaian dan penghargaan UKM FDI UMM.</p>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <!-- NOTIFICATION -->
+                    <button
+                        type="button"
+                        class="notification-button"
+                    >
+                        🔔
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <!-- PROFILE -->
+                    <div class="profile">
+
+                        <div class="profile-avatar">
+                            JA
+                        </div>
+
+                        <div>
+                            <strong>Julian Abi</strong>
+                            <span>Ketua Umum</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- PRESTASI CONTENT -->
+            <section class="content feature-page">
+
+                <!-- STATISTICS -->
+                <div class="feature-stats">
+
+                    <article class="feature-stat">
+
+                        <span class="stat-icon">🏆</span>
+
+                        <div>
+                            <small>Total Prestasi</small>
+                            <strong id="totalAwards">0</strong>
+                            <em>Seluruh pencapaian FDI</em>
+                        </div>
+
+                    </article>
+
+                    <article class="feature-stat">
+
+                        <span class="stat-icon orange">🥇</span>
+
+                        <div>
+                            <small>Prestasi Akademik</small>
+                            <strong id="academicAwards">0</strong>
+                            <em>Lomba dan karya ilmiah</em>
+                        </div>
+
+                    </article>
+
+                    <article class="feature-stat">
+
+                        <span class="stat-icon purple">★</span>
+
+                        <div>
+                            <small>Prestasi Non Akademik</small>
+                            <strong id="nonAcademicAwards">0</strong>
+                            <em>Organisasi dan umum</em>
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <!-- TOOLBAR -->
+                <div class="feature-toolbar">
+
+                    <div>
+                        <h2>Daftar Prestasi</h2>
+                        <p>
+                            Dokumentasikan pencapaian dan penghargaan anggota FDI.
+                        </p>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="addAwardBtn"
+                    >
+                        ＋ Tambah Prestasi
+                    </button>
+
+                </div>
+
+                <!-- SEARCH & FILTER -->
+                <div class="filter-row">
+
+                    <input
+                        id="awardSearch"
+                        type="search"
+                        placeholder="Cari nama prestasi atau penyelenggara..."
+                    >
+
+                    <select id="awardYear">
+                        <option value="all">Semua Tahun</option>
+                    </select>
+
+                    <select id="awardCategory">
+                        <option value="all">Semua Kategori</option>
+                        <option value="Akademik">Akademik</option>
+                        <option value="Non Akademik">Non Akademik</option>
+                        <option value="Organisasi">Organisasi</option>
+                    </select>
+
+                </div>
+
+                <!-- AWARD LIST -->
+                <div id="awardList" class="award-list"></div>
+
+                <!-- MOTIVATION BANNER -->
+                <div class="encourage-banner">
+
+                    <span>💡</span>
+
+                    <div>
+                        <strong>Terus berprestasi, FDI!</strong>
+                        <p>
+                            Bersama, kita wujudkan UKM FDI yang semakin berdampak.
+                        </p>
+                    </div>
+
+                    <b>🏆</b>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- MODAL TAMBAH / EDIT PRESTASI -->
+    <dialog id="awardDialog" class="feature-dialog">
+
+        <form id="awardForm">
+
+            <!-- DIALOG HEADER -->
+            <div class="dialog-head">
+
+                <div>
+                    <h2 id="awardDialogTitle">Tambah Prestasi</h2>
+                    <p>Isi informasi pencapaian UKM FDI.</p>
+                </div>
+
+                <button
+                    type="button"
+                    class="close-dialog"
+                    data-close
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <!-- NAMA PRESTASI -->
+            <label>
+                Nama prestasi
+
+                <input
+                    type="text"
+                    name="title"
+                    required
+                    maxlength="100"
+                    placeholder="Contoh: Juara 1 Lomba Karya Tulis Ilmiah"
+                >
+            </label>
+
+            <!-- FORM GRID -->
+            <div class="form-grid">
+
+                <label>
+                    Penyelenggara
+
+                    <input
+                        type="text"
+                        name="organizer"
+                        required
+                        placeholder="Nama universitas/instansi"
+                    >
+                </label>
+
+                <label>
+                    Tanggal
+
+                    <input
+                        type="date"
+                        name="date"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Kategori
+
+                    <select name="category" required>
+                        <option value="Akademik">Akademik</option>
+                        <option value="Non Akademik">Non Akademik</option>
+                        <option value="Organisasi">Organisasi</option>
+                    </select>
+                </label>
+
+                <label>
+                    Tingkat
+
+                    <select name="level" required>
+                        <option value="Nasional">Nasional</option>
+                        <option value="Internasional">Internasional</option>
+                        <option value="Regional">Regional</option>
+                        <option value="Universitas">Universitas</option>
+                    </select>
+                </label>
+
+            </div>
+
+            <!-- DESKRIPSI -->
+            <label>
+                Deskripsi
+
+                <textarea
+                    name="description"
+                    rows="3"
+                    placeholder="Ceritakan singkat pencapaian ini..."
+                ></textarea>
+            </label>
+
+            <!-- PAPER / KARYA ILMIAH -->
+            <div class="paper-form-section">
+
+                <h3>Paper / Karya Ilmiah</h3>
+
+                <!-- UPLOAD PDF -->
+                <label>
+                    Upload Paper (PDF)
+
+                    <input
+                        type="file"
+                        name="paperFile"
+                        id="paperFile"
+                        accept=".pdf,application/pdf"
+                    >
+
+                    <small id="paperStatus">
+                        Format file PDF.
+                    </small>
+                </label>
+
+                <!-- HAPUS PDF -->
+                <label id="removePdfRow" hidden>
+
+                    <span>
+                        <input
+                            type="checkbox"
+                            name="removePdf"
+                            id="removePdf"
+                        >
+                        Hapus PDF yang tersimpan
+                    </span>
+
+                </label>
+
+                <!-- GOOGLE DRIVE -->
+                <label>
+                    Link Google Drive
+
+                    <input
+                        type="url"
+                        name="paperUrl"
+                        id="paperUrl"
+                        placeholder="https://drive.google.com/..."
+                    >
+
+                    <small>
+                        Pastikan akses Google Drive sudah diatur agar dapat dibuka.
+                    </small>
+                </label>
+
+            </div>
+
+            <!-- DIALOG ACTIONS -->
+            <div class="dialog-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-close
+                >
+                    Batal
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Simpan Prestasi
+                </button>
+
+            </div>
+
+        </form>
+
+    </dialog>
+
+    <!-- JAVASCRIPT -->
+    <script src="prestasi.js"></script>
+
+</body>
+</html>
